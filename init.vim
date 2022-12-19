@@ -2,7 +2,7 @@
 " NVIM RC
 " 
 " Author: Rohan Chacko
-
+"
 
 "
 " Load Vim-Plug and plugins
@@ -47,9 +47,9 @@ call plug#end()
 " Set leader key
 let mapleader=" "
 
-luafile ~/.dotfiles/nvim/lua/lsp.lua
-luafile ~/.dotfiles/nvim/lua/nerdtree.lua
-luafile ~/.dotfiles/nvim/lua/telescope.lua
+luafile ~/dotfiles/nvim/lua/lsp.lua
+luafile ~/dotfiles/nvim/lua/nerdtree.lua
+luafile ~/dotfiles/nvim/lua/telescope.lua
 
 "
 " Theme Settings
@@ -98,12 +98,15 @@ set mouse=a
 " Press the j 2 times in row to switch to normal mode
 inoremap jj <esc>
 
-" Disable arrow keys
+" Disable arrow keys in normal mode
 noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
 
+" Set number system to decimal -- treat numbers with leading zero as decimal
+" instead of default octal
+set nrformats=
 
 " Exit Vim if NERDTree is the only window remaining in the only tab.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
